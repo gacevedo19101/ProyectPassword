@@ -38,6 +38,9 @@ public:
     QPushButton *btnDelete;
     QPushButton *btnExport;
     QPushButton *btnView;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *btnExit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -45,7 +48,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(524, 367);
+        MainWindow->resize(525, 408);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayoutWidget = new QWidget(centralwidget);
@@ -95,10 +98,21 @@ public:
 
         verticalLayout->addWidget(btnView);
 
+        verticalLayoutWidget_2 = new QWidget(centralwidget);
+        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
+        verticalLayoutWidget_2->setGeometry(QRect(10, 320, 111, 31));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        btnExit = new QPushButton(verticalLayoutWidget_2);
+        btnExit->setObjectName("btnExit");
+
+        verticalLayout_2->addWidget(btnExit);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 524, 21));
+        menubar->setGeometry(QRect(0, 0, 525, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -118,6 +132,7 @@ public:
         btnDelete->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
         btnExport->setText(QCoreApplication::translate("MainWindow", "Export txt", nullptr));
         btnView->setText(QCoreApplication::translate("MainWindow", "View", nullptr));
+        btnExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
     } // retranslateUi
 
 };

@@ -23,6 +23,7 @@ MainWindow::MainWindow(const QString& masterPassword, QWidget *parent)
     connect(ui->btnDelete, &QPushButton::clicked, this, &MainWindow::clickDelete);
     connect(ui->btnExport, &QPushButton::clicked, this, &MainWindow::clickExport);
     connect(ui->btnView, &QPushButton::clicked, this, &MainWindow::click_view);
+    connect(ui->btnExit, &QPushButton::clicked, this, &MainWindow::close);
     cargarDatos();
     listUpdate();
 }
